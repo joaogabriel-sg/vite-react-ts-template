@@ -7,13 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|tsx)\" --write",
+    "type-check": "tsc --noEmit",
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@types/node": "20.2.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -33,10 +39,18 @@
     "eslint-plugin-react-refresh": "0.3.4",
     "eslint-plugin-tailwindcss": "^3.12.0",
     "eslint-plugin-unused-imports": "2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "postcss": "8.4.23",
     "prettier": "2.8.8",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.2",
     "vite": "4.3.2"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "pnpm lint:fix",
+      "pnpm format"
+    ]
   }
 }
