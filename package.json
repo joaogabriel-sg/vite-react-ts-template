@@ -10,6 +10,9 @@
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|tsx)\" --write",
     "type-check": "tsc --noEmit",
+    "test": "vitest --run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --passWithNoTests --coverage",
     "preview": "vite preview",
     "prepare": "husky install"
   },
