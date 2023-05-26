@@ -10,6 +10,9 @@
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|tsx)\" --write",
     "type-check": "tsc --noEmit",
+    "test": "vitest --run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --passWithNoTests --coverage",
     "preview": "vite preview",
     "prepare": "husky install"
   },
@@ -20,12 +23,16 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.3",
     "@commitlint/config-conventional": "17.6.3",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "14.0.0",
     "@types/node": "20.2.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "5.59.7",
     "@typescript-eslint/parser": "5.59.7",
     "@vitejs/plugin-react-swc": "3.0.0",
+    "@vitest/coverage-c8": "0.31.1",
+    "@vitest/ui": "0.31.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-prettier": "8.8.0",
@@ -40,12 +47,14 @@
     "eslint-plugin-tailwindcss": "3.12.0",
     "eslint-plugin-unused-imports": "2.0.0",
     "husky": "8.0.3",
+    "jsdom": "22.0.0",
     "lint-staged": "13.2.2",
     "postcss": "8.4.23",
     "prettier": "2.8.8",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.2",
-    "vite": "4.3.2"
+    "vite": "4.3.2",
+    "vitest": "0.31.1"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
