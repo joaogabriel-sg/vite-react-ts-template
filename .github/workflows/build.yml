@@ -1,0 +1,41 @@
+name: Build app workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check types
+        run: pnpm type-check
+
+      - name: Check linting
+        run: pnpm lint
+
+      - name: Check tests
+        run: pnpm test
+
+      - name: Build app
+        run: pnpm build
