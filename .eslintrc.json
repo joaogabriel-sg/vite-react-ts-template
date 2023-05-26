@@ -21,6 +21,7 @@
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
@@ -35,6 +36,7 @@
     "unused-imports",
     "eslint-plugin-import-helpers",
     "react-hooks",
+    "@tanstack/query",
     "prettier"
   ],
   "rules": {
