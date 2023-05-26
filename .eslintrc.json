@@ -23,6 +23,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
